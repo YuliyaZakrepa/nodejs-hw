@@ -57,7 +57,8 @@ app.use((err, req, res, next)=>{
   res.status(500).json({message});
 });
 
-const port = process.env.PORT || 3000;
+const port = Number(process.env.PORT) || 3000;
+console.log(process.env.PORT);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
