@@ -1,6 +1,6 @@
 import PinoHttp from 'pino-http';
 
-const logger = PinoHttp({
+export const logger = PinoHttp({
     level: 'info',
     transport: {
       target: 'pino-pretty',
@@ -14,4 +14,4 @@ const logger = PinoHttp({
       },
     },
   });
-export default logger;
+
