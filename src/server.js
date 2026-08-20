@@ -19,9 +19,7 @@ app.use(logger);
 
 app.use(cors());
 
-
 app.use('/notes', notesRouter);
-
 
 app.use(notFoundHandler);
 
