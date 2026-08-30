@@ -17,15 +17,7 @@ import {
 const notesRouter = Router();
 notesRouter.get('/notes', celebrate(getNoteSchema), getAllNotes);
 notesRouter.get('/notes/:noteId', celebrate(noteIdSchema), getNoteById);
-notesRouter.post(
-  '/notes',
-  celebrate(createNoteSchema, { abortEarly: false }),
-  createNote,
-);
-notesRouter.patch(
-  '/notes/:noteId',
-  celebrate(updateNoteSchema, { abortEarly: false }),
-  updateNote,
-);
+notesRouter.post('/notes',celebrate(createNoteSchema, { abortEarly: false }), createNote);
+notesRouter.patch('/notes/:noteId',celebrate(updateNoteSchema, { abortEarly: false }), updateNote);
 notesRouter.delete('/notes/:noteId', celebrate(noteIdSchema), deleteNote);
 export default notesRouter;
