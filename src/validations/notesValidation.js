@@ -41,11 +41,11 @@ export const updateNoteSchema = {
   }).min(1),
 };
 
-export const getNoteSchema = {
+export const getAllNotesSchema = {
   [Segments.QUERY]: Joi.object({
     page: Joi.number().min(1).integer().default(1),
-    perPage: Joi.number().integer().min(15).default(10),
+    perPage: Joi.number().integer().min(5).max(20).default(10),
     tag: Joi.string().valid(...TAGS),
-    search: Joi.string(),
+    search: Joi.string().allow('')
   }),
 };
