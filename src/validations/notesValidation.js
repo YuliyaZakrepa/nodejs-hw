@@ -21,7 +21,6 @@ export const createNoteSchema = {
     content: Joi.string().allow(''),
     tag: Joi.string()
       .valid(...TAGS)
-      .default(TAGS[TAGS.length - 1])
       .messages({ 'any.only': `Tag must be one of: ${TAGS.join(', ')}` }),
   }),
 };
@@ -36,7 +35,6 @@ export const updateNoteSchema = {
     content: Joi.string().allow(''),
     tag: Joi.string()
       .valid(...TAGS)
-      .default(TAGS[TAGS.length - 1])
       .messages({ 'any.only': `Tag must be one of: ${TAGS.join(', ')}` }),
   }).min(1),
 };

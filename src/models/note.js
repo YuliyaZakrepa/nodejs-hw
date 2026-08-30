@@ -8,7 +8,7 @@ const noteSchema = new Schema(
     tag: {
       type: String,
       enum: TAGS,
-      default: TAGS[TAGS.length-1],
+      default: 'Todo',
     },
   },
   { timestamps: true, versionKey: false },
@@ -16,6 +16,6 @@ const noteSchema = new Schema(
 
 noteSchema.index({tag:1});
 
-const Note = model('Note', noteSchema);
-export default Note;
+export const Note = model('Note', noteSchema);
+
 
