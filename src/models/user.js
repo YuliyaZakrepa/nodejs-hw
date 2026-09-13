@@ -3,7 +3,8 @@ import {Schema, model} from "mongoose";
 const userSchema = new Schema({
   username: {type: String, trim: true},
   email: {type: String, required: true, unique: true, trim: true},
-  password: {type: String, required: true, minLength: 8, }
+  password: {type: String, required: true, minLength: 8, },
+  avatar: {type: String, requred: false, default: "https://ac.goit.global/fullstack/react/default-avatar.jpg"}
 }, {timestamps: true, versionKey: false});
 
 userSchema.pre("save", function(){
